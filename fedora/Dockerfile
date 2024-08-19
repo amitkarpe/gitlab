@@ -1,3 +1,3 @@
 FROM fedora:39
-CMD echo "HelloWorld"
+CMD echo "Hello World - Fedora 39"
 CMD cat /etc/os-release
