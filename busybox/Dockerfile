@@ -1,2 +1,2 @@
 FROM busybox
-CMD echo "HelloWorld from BusyBox"
+CMD echo "HelloWorld from BusyBox triggered by CodePipeline"
