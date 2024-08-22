@@ -1,2 +1,2 @@
 FROM busybox
-CMD echo "HelloWorld from BusyBox triggered by CodePipeline `date`"
+CMD echo "HelloWorld from BusyBox triggered by CodePipeline on Workload Account"
