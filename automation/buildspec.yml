@@ -1,0 +1,139 @@
+version: 0.2
+
+env:
+  variables:
+    MAX_AGE_DAYS: "7"
+
+phases:
+  pre_build:
+    commands:
+      - echo "Setting build for docker images listed in automation/list_images.md"
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      # Add Docker Hub authentication to bypass rate limits
+      - echo Logging in to Docker Hub...
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+      - echo Parsing list_images.md file...
+      - IMAGES=$(grep -v "^#" automation/list_images.md | grep -v "^$" | grep -v "^\`\`\`" | grep -v "^image_name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+      - NOW=$(date +%s)
+  
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Processing Docker images...
+      - |
+        for IMAGE in $IMAGES; do
+          if [[ $IMAGE == *":"* ]]; then
+            IMAGE_NAME=$(echo $IMAGE | cut -d: -f1)
+            IMAGE_TAG=$(echo $IMAGE | cut -d: -f2)
+          else
+            IMAGE_NAME=$IMAGE
+            IMAGE_TAG="latest"
+          fi
+          
+          echo "============================================="
+          echo "Processing $IMAGE_NAME:$IMAGE_TAG"
+          echo "============================================="
+          
+          # Create repository path - handle nested paths correctly
+          REPO_PATH=$IMAGE_NAME
+          
+          # ECR repository URL
+          ECR_REPO_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPO_PATH"
+          
+          # Check if repository exists in ECR
+          echo "→ Checking if ECR repository exists: $REPO_PATH"
+          REPO_EXISTS=false
+          SHOULD_PUSH=true
+          
+          if aws ecr describe-repositories --repository-names $REPO_PATH 2>/dev/null; then
+            REPO_EXISTS=true
+            echo "✓ ECR Repository exists: $REPO_PATH"
+            
+            # Check if the image with this tag exists and how old it is
+            if aws ecr describe-images --repository-name $REPO_PATH --image-ids imageTag=$IMAGE_TAG 2>/dev/null; then
+              echo "✓ Image tag exists in ECR: $IMAGE_TAG"
+              
+              # Get the image push date
+              IMAGE_PUSH_DATE=$(aws ecr describe-images --repository-name $REPO_PATH --image-ids imageTag=$IMAGE_TAG --query 'imageDetails[0].imagePushedAt' --output text)
+              
+              # Convert to seconds since epoch (AWS returns in ISO 8601 format)
+              IMAGE_PUSH_TIMESTAMP=$(date -d "$IMAGE_PUSH_DATE" +%s)
+              
+              # Calculate age in days
+              AGE_SECONDS=$((NOW - IMAGE_PUSH_TIMESTAMP))
+              AGE_DAYS=$((AGE_SECONDS / 86400))
+              
+              echo "→ Image was pushed $AGE_DAYS days ago (max age: $MAX_AGE_DAYS days)"
+              
+              if [ $AGE_DAYS -lt $MAX_AGE_DAYS ]; then
+                echo "→ Image is newer than $MAX_AGE_DAYS days, skipping push"
+                SHOULD_PUSH=false
+              else
+                echo "→ Image is older than $MAX_AGE_DAYS days, will push new version"
+              fi
+            else
+              echo "→ Image tag does not exist in ECR, will push new image"
+            fi
+          else
+            echo "→ ECR Repository does not exist, will create it"
+          fi
+          
+          # Only proceed with pull and push if we need to
+          if [ "$SHOULD_PUSH" = true ]; then
+            # Try to pull the image from Docker Hub first
+            echo "→ Pulling $IMAGE_NAME:$IMAGE_TAG from Docker Hub"
+            if docker pull $IMAGE_NAME:$IMAGE_TAG; then
+              echo "✓ Successfully pulled $IMAGE_NAME:$IMAGE_TAG from Docker Hub"
+              
+              # Create repository if it doesn't exist
+              if [ "$REPO_EXISTS" = false ]; then
+                echo "→ Creating ECR repository: $REPO_PATH"
+                if aws ecr create-repository --repository-name $REPO_PATH; then
+                  echo "✓ Successfully created ECR repository: $REPO_PATH"
+                  REPO_EXISTS=true
+                else
+                  echo "✗ Failed to create ECR repository: $REPO_PATH"
+                  echo "  - Check IAM permissions (ecr:CreateRepository)"
+                  echo "  - Continuing with image tagging and push attempt..."
+                fi
+              fi
+              
+              # Tag for ECR
+              echo "→ Tagging $IMAGE_NAME:$IMAGE_TAG for ECR"
+              docker tag $IMAGE_NAME:$IMAGE_TAG $ECR_REPO_URL:$IMAGE_TAG
+              echo "✓ Successfully tagged image for ECR"
+              
+              # Push to ECR
+              echo "→ Pushing $IMAGE_NAME:$IMAGE_TAG to ECR"
+              if docker push $ECR_REPO_URL:$IMAGE_TAG; then
+                echo "✓ Successfully pushed image to ECR"
+              else
+                echo "✗ Failed to push image to ECR"
+                echo "  - Check IAM permissions and ECR repository access"
+              fi
+              
+              # Clean up image to save space
+              echo "→ Cleaning up Docker images to save space..."
+              docker rmi $IMAGE_NAME:$IMAGE_TAG || echo "  - Could not remove $IMAGE_NAME:$IMAGE_TAG"
+              docker rmi $ECR_REPO_URL:$IMAGE_TAG || echo "  - Could not remove $ECR_REPO_URL:$IMAGE_TAG"
+            else
+              echo "✗ Failed to pull $IMAGE_NAME:$IMAGE_TAG - skipping"
+              echo "  - Check if image exists on Docker Hub"
+              echo "  - Verify Docker Hub credentials and rate limits"
+            fi
+          else
+            echo "→ Skipping processing for $IMAGE_NAME:$IMAGE_TAG (recently pushed to ECR)"
+          fi
+          echo "============================================="
+        done
+  
+  post_build:
+    commands:
+      - echo Docker image processing completed on `date`
+      - echo "All images in list_images.md have been processed and pushed to ECR"
+
+artifacts:
+  files:
+    - list_images.md
+    - buildspec.yml 
