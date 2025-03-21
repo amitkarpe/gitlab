@@ -31,10 +31,3 @@ nfcore/scrnaseq
 nfcore/rnafusion
 nfcore/hlatyping
 nfcore/demo
-#nfcore/sarek
-#nfcore/sarek
-#nfcore/sarek
-#nfcore/sarek
-#nfcore/sarek
-#nfcore/sarek
-# Negative testing webhook by updating automation/add_images.md

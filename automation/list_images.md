@@ -12,3 +12,4 @@ nfcore/rnafusion
 nfcore/hlatyping
 nfcore/demo
 nfcore/sarek
+# Positive testing webhook by updating automation/list_images.md #13
