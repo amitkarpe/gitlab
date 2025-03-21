@@ -10,7 +10,10 @@ image_name:tag
 
 ## Images
 # Add images below this line (one per line)
-mambaorg/micromamba:0.25.1
-nextflow/rnaseq-nf:latest
 nfcore/rnaseq
-nf-core/ampliseq
+nfcore/ampliseq
+nfcore/scrnaseq
+nfcore/rnafusion
+nfcore/hlatyping
+nfcore/demo
+nfcore/sarek
