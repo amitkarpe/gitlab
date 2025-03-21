@@ -54,3 +54,6 @@ To enable this integration:
    - AWS_ACCESS_KEY_ID: The IAM user's access key
    - AWS_SECRET_ACCESS_KEY: The IAM user's secret key
    - AWS_DEFAULT_REGION: The AWS region where CodeBuild is located 
+
+
+## Enable "Primary source webhook events"
