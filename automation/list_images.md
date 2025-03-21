@@ -1,2 +1,1 @@
-nfcore/rnaseq
 nfcore/sarek
