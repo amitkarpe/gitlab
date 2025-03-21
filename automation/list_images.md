@@ -12,3 +12,4 @@ image_name:tag
 # Add images below this line (one per line)
 mambaorg/micromamba:0.25.1
 nextflow/rnaseq-nf:latest
+nfcore/rnaseq
