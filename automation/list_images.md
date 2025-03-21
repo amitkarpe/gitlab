@@ -1,3 +1,9 @@
+nfcore/rnaseq:1.4.2
+nfcore/ampliseq:1.2.0
+nfcore/rnafusion:fusioninspector_2.8.0dev
+nfcore/scrnaseq:1.1.0
+nfcore/hlatyping:1.2.0
+nfcore/sarek:2.7.2
 nfcore/sarek
 nfcore/rnaseq
 nfcore/ampliseq
