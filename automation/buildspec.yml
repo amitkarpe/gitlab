@@ -8,7 +8,9 @@ phases:
       - echo Parsing list_images.md file...
       - IMAGES=$(grep -v "^#" automation/list_images.md | grep -v "^$" | grep -v "^\`\`\`" | grep -v "^image_name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
       - echo "--------------------------------"
-      - echo "IMAGES: $IMAGES"
+      - echo " "
+      - echo " IMAGES  $IMAGES"
+      - echo " "
       - echo "--------------------------------"
   
   build:
