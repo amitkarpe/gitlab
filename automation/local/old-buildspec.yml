@@ -1,0 +1,59 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - echo Parsing list_images.md file...
+      - IMAGES=$(grep -v "^#" automation/list_images.md | grep -v "^$" | grep -v "^\`\`\`" | grep -v "^image_name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+      - echo "--------------------------------"
+      - echo " "
+      - echo " IMAGES  $IMAGES"
+      - echo " "
+      - echo "--------------------------------"
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Processing Docker images...
+      - |
+        for IMAGE in $IMAGES; do
+          if [[ $IMAGE == *":"* ]]; then
+            IMAGE_NAME=$(echo $IMAGE | cut -d: -f1)
+            IMAGE_TAG=$(echo $IMAGE | cut -d: -f2)
+          else
+            IMAGE_NAME=$IMAGE
+            IMAGE_TAG="latest"
+          fi
+
+          echo "--------------------------------"
+          echo "Processing $IMAGE_NAME:$IMAGE_TAG"
+
+          # Pull the image from Docker Hub
+          echo "Pulling $IMAGE_NAME:$IMAGE_TAG from Docker Hub"
+          docker pull $IMAGE_NAME:$IMAGE_TAG
+
+          # Check if repository exists, create if it doesn't
+          aws ecr describe-repositories --repository-names $IMAGE_NAME || aws ecr create-repository --repository-name $IMAGE_NAME
+
+          # Tag for ECR
+          echo "Tagging $IMAGE_NAME:$IMAGE_TAG for ECR"
+          echo "$IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG"
+          docker tag $IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
+
+          # Push to ECR
+          echo "Pushing $IMAGE_NAME:$IMAGE_TAG to ECR"
+          docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
+          echo "--------------------------------"
+        done
+
+  post_build:
+    commands:
+      - echo Docker image processing completed on `date`
+      - echo "All images in list_images.md have been processed and pushed to ECR"
+
+artifacts:
+  files:
+    - list_images.md
+    - buildspec.yml
