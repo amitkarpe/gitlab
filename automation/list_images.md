@@ -1,4 +1,10 @@
 nfcore/rnaseq
-nf-core/ampliseq
-busybox
+nfcore/ampliseq
+nfcore/scrnaseq
+nfcore/rnafusion
+nfcore/hlatyping
+nfcore/demo
+nfcore/sarek
 
+busybox
+alpine

@@ -25,6 +25,7 @@ phases:
             IMAGE_TAG="latest"
           fi
           
+          echo "--------------------------------"
           echo "Processing $IMAGE_NAME:$IMAGE_TAG"
           
           # Pull the image from Docker Hub
@@ -37,13 +38,12 @@ phases:
           # Tag for ECR
           echo "Tagging $IMAGE_NAME:$IMAGE_TAG for ECR"
           echo "$IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG"
-          echo "--------------------------------"
           docker tag $IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
-          echo "--------------------------------"
 
           # Push to ECR
           echo "Pushing $IMAGE_NAME:$IMAGE_TAG to ECR"
           docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
+          echo "--------------------------------"
         done
   
   post_build:
