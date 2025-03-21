@@ -11,4 +11,4 @@ nfcore/scrnaseq
 nfcore/rnafusion
 nfcore/hlatyping
 nfcore/demo
-nfcore/sarek
+#nfcore/sarek
