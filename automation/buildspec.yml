@@ -7,6 +7,9 @@ phases:
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - echo Parsing list_images.md file...
       - IMAGES=$(grep -v "^#" automation/list_images.md | grep -v "^$" | grep -v "^\`\`\`" | grep -v "^image_name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+      - echo "--------------------------------"
+      - echo "IMAGES: $IMAGES"
+      - echo "--------------------------------"
   
   build:
     commands:
@@ -32,8 +35,12 @@ phases:
           aws ecr describe-repositories --repository-names $IMAGE_NAME || aws ecr create-repository --repository-name $IMAGE_NAME
           
           # Tag for ECR
+          echo "Tagging $IMAGE_NAME:$IMAGE_TAG for ECR"
+          echo "$IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG"
+          echo "--------------------------------"
           docker tag $IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
-          
+          echo "--------------------------------"
+
           # Push to ECR
           echo "Pushing $IMAGE_NAME:$IMAGE_TAG to ECR"
           docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
