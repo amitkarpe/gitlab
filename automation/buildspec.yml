@@ -12,7 +12,7 @@ phases:
       - echo " IMAGES  $IMAGES"
       - echo " "
       - echo "--------------------------------"
-  
+
   build:
     commands:
       - echo Build started on `date`
@@ -26,17 +26,17 @@ phases:
             IMAGE_NAME=$IMAGE
             IMAGE_TAG="latest"
           fi
-          
+
           echo "--------------------------------"
           echo "Processing $IMAGE_NAME:$IMAGE_TAG"
-          
+
           # Pull the image from Docker Hub
           echo "Pulling $IMAGE_NAME:$IMAGE_TAG from Docker Hub"
           docker pull $IMAGE_NAME:$IMAGE_TAG
-          
+
           # Check if repository exists, create if it doesn't
           aws ecr describe-repositories --repository-names $IMAGE_NAME || aws ecr create-repository --repository-name $IMAGE_NAME
-          
+
           # Tag for ECR
           echo "Tagging $IMAGE_NAME:$IMAGE_TAG for ECR"
           echo "$IMAGE_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG"
@@ -47,7 +47,7 @@ phases:
           docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_NAME:$IMAGE_TAG
           echo "--------------------------------"
         done
-  
+
   post_build:
     commands:
       - echo Docker image processing completed on `date`
