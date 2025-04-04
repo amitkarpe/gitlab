@@ -38,3 +38,21 @@ terraform.rc
 
 # Added Local Test script 
 test-local.sh
+
+# Added for Nextflow
+.nextflow*
+work/
+data/
+results/
+.DS_Store
+testing/
+testing*
+*.pyc
+null/
+*.code-workspace
+.nf-test*
+.nf-test/
+test-datasets/
+test.tap
+test.xml
+results_*
