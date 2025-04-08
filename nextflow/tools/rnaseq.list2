@@ -1,0 +1,260 @@
+{
+    "processes": [
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SE_GENE_SCALED",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:CUSTOM_CATADDITIONALFASTA",
+            "container": "quay.io/biocontainers/python:3.12"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BEDGRAPH_BEDCLIP_BEDGRAPHTOBIGWIG_FORWARD:UCSC_BEDCLIP",
+            "container": "quay.io/biocontainers/ucsc-bedclip:377--h0b8a92a_2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SE_TRANSCRIPT",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:TXIMETA_TXIMPORT",
+            "container": "quay.io/biocontainers/bioconductor-tximeta:1.20.1--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_STAR_SALMON",
+            "container": "quay.io/biocontainers/mulled-v2-8849acf39a43cdd6c839a369a74c0adc823e2f91:ab110436faf952a33575c64dd74615a84011450b-0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:MULTIQC_CUSTOM_BIOTYPE",
+            "container": "quay.io/biocontainers/python:3.9--1"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SE_GENE_LENGTH_SCALED",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:STAR_ALIGN",
+            "container": "quay.io/nf-core/htslib_samtools_star_gawk:311d422a50e6d829"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:UNTAR_SALMON_INDEX",
+            "container": "quay.io/nf-core/ubuntu:22.04"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:BBMAP_BBSPLIT",
+            "container": "quay.io/biocontainers/bbmap:39.10--h92535d8_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BEDGRAPH_BEDCLIP_BEDGRAPHTOBIGWIG_FORWARD:UCSC_BEDGRAPHTOBIGWIG",
+            "container": "quay.io/biocontainers/ucsc-bedgraphtobigwig:469--h9b8f530_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_MARKDUPLICATES_PICARD:SAMTOOLS_INDEX",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_JUNCTIONANNOTATION",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BEDTOOLS_GENOMECOV_FW",
+            "container": "quay.io/nf-core/bedtools_coreutils:a623c13f66d5262b"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:BBMAP_BBSPLIT",
+            "container": "quay.io/biocontainers/bbmap:39.10--h92535d8_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:SALMON_QUANT",
+            "container": "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:TRIMGALORE",
+            "container": "quay.io/biocontainers/trim-galore:0.6.10--hdfd78af_1"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FASTQ_SUBSAMPLE_FQ_SALMON:FQ_SUBSAMPLE",
+            "container": "quay.io/biocontainers/fq:0.12.0--h9ee0642_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BEDGRAPH_BEDCLIP_BEDGRAPHTOBIGWIG_REVERSE:UCSC_BEDCLIP",
+            "container": "quay.io/biocontainers/ucsc-bedclip:377--h0b8a92a_2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:SE_GENE",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_JUNCTIONSATURATION",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:CUSTOM_GETCHROMSIZES",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:DUPRADAR",
+            "container": "quay.io/biocontainers/bioconductor-dupradar:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:STRINGTIE_STRINGTIE",
+            "container": "quay.io/biocontainers/stringtie:2.2.3--h43eeafb_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FQ_LINT",
+            "container": "quay.io/biocontainers/fq:0.12.0--h9ee0642_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_MARKDUPLICATES_PICARD:PICARD_MARKDUPLICATES",
+            "container": "quay.io/biocontainers/picard:3.1.1--hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:SUBREAD_FEATURECOUNTS",
+            "container": "quay.io/biocontainers/subread:2.0.6--he4a0461_2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:CAT_FASTQ",
+            "container": "quay.io/nf-core/coreutils:9.5--ae99c88a9b28c264"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_INNERDISTANCE",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FQ_LINT_AFTER_TRIMMING",
+            "container": "quay.io/biocontainers/fq:0.12.0--h9ee0642_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_BAMSTAT",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SE_GENE",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_READDUPLICATION",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_MARKDUPLICATES_PICARD:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:STAR_GENOMEGENERATE",
+            "container": "quay.io/nf-core/htslib_samtools_star_gawk:311d422a50e6d829"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:SE_GENE_SCALED",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FQ_LINT_AFTER_BBSPLIT",
+            "container": "quay.io/biocontainers/fq:0.12.0--h9ee0642_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUALIMAP_RNASEQ",
+            "container": "quay.io/biocontainers/qualimap:2.3--hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_READDISTRIBUTION",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BEDTOOLS_GENOMECOV_REV",
+            "container": "quay.io/nf-core/bedtools_coreutils:a623c13f66d5262b"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:GTF2BED",
+            "container": "quay.io/biocontainers/perl:5.26.2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:CUSTOM_TX2GENE",
+            "container": "quay.io/biocontainers/python:3.10.4"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:GTF_FILTER",
+            "container": "quay.io/biocontainers/python:3.9--1"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_PSEUDO",
+            "container": "quay.io/biocontainers/mulled-v2-8849acf39a43cdd6c839a369a74c0adc823e2f91:ab110436faf952a33575c64dd74615a84011450b-0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:TXIMETA_TXIMPORT",
+            "container": "quay.io/biocontainers/bioconductor-tximeta:1.20.1--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:CUSTOM_TX2GENE",
+            "container": "quay.io/biocontainers/python:3.10.4"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:SE_TRANSCRIPT",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC",
+            "container": "quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FASTQ_SUBSAMPLE_FQ_SALMON:SALMON_QUANT",
+            "container": "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BAM_RSEQC:RSEQC_INFEREXPERIMENT",
+            "container": "quay.io/biocontainers/rseqc:5.0.3--py39hf95cd2a_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:MULTIQC",
+            "container": "quay.io/biocontainers/multiqc:1.25.1--pyhdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_STAR_SALMON:SE_GENE_LENGTH_SCALED",
+            "container": "quay.io/biocontainers/bioconductor-summarizedexperiment:1.32.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SALMON_QUANT",
+            "container": "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:GUNZIP_ADDITIONAL_FASTA",
+            "container": "quay.io/nf-core/ubuntu:22.04"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_RNASEQ:PREPARE_GENOME:GUNZIP_GTF",
+            "container": "quay.io/nf-core/ubuntu:22.04"
+        },
+        {
+            "name": "NFCORE_RNASEQ:RNASEQ:BEDGRAPH_BEDCLIP_BEDGRAPHTOBIGWIG_REVERSE:UCSC_BEDGRAPHTOBIGWIG",
+            "container": "quay.io/biocontainers/ucsc-bedgraphtobigwig:469--h9b8f530_0"
+        }
+    ]
+}

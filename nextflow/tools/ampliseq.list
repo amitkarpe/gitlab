@@ -1,0 +1,292 @@
+{
+    "processes": [
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:FILTER_CLUSTERS",
+            "container": "quay.io/biocontainers/pandas:1.1.5"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INSEQ",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:FILTER_LEN_ASV",
+            "container": "quay.io/biocontainers/bioconductor-biostrings:2.58.0--r40h037d062_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN",
+            "container": "quay.io/biocontainers/pandas:1.1.5"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:METADATA_PAIRWISE",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERTAXA",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_PPLACE",
+            "container": "quay.io/biocontainers/bioconductor-biostrings:2.58.0--r40h037d062_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:PHYLOSEQ_INTAX_QIIME2",
+            "container": "quay.io/biocontainers/pandas:1.1.5"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT",
+            "container": "quay.io/biocontainers/mulled-v2-b2ec1fea5791d428eebb8c8ea7409c350d31dada:a447f6b7a6afde38352b24c30ae9cd6e39df95c4-1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:FORMAT_TAXONOMY_QIIME",
+            "container": "docker.io/biocontainers/biocontainers:v1.2.0_cv1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES",
+            "container": "quay.io/nf-core/ubuntu:20.04"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORT",
+            "container": "quay.io/biocontainers/r-tidyverse:1.2.1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELTAX",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ",
+            "container": "quay.io/biocontainers/bioconductor-phyloseq:1.46.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY",
+            "container": "docker.io/biocontainers/biocontainers:v1.2.0_cv1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERSSU",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:METADATA_ALL",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_SINTAX",
+            "container": "quay.io/biocontainers/bioconductor-biostrings:2.58.0--r40h037d062_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_BPAVG",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_TREE",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC",
+            "container": "quay.io/biocontainers/cutadapt:4.6--py39hf95cd2a_1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY",
+            "container": "quay.io/biocontainers/python:3.9"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_ALPHARAREFACTION",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:SBDIEXPORTREANNOTATE",
+            "container": "quay.io/biocontainers/r-tidyverse:1.2.1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:FILTER_STATS",
+            "container": "quay.io/biocontainers/pandas:1.1.5"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_INASV_BPAVG",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:TREESUMMARIZEDEXPERIMENT",
+            "container": "quay.io/biocontainers/bioconductor-treesummarizedexperiment:2.10.0--r43hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:CUTADAPT_TAXONOMY",
+            "container": "quay.io/biocontainers/cutadapt:4.6--py39hf95cd2a_1"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TABLEFILTERTAXA",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_QIIME2",
+            "container": "quay.io/biocontainers/bioconductor-biostrings:2.58.0--r40h037d062_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INTAX",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP",
+            "container": "quay.io/biocontainers/barrnap:0.9--hdfd78af_4"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_ABSOLUTE",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_CLASSIFY",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:FASTQC",
+            "container": "quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD",
+            "container": "quay.io/biocontainers/python:3.8.3"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC",
+            "container": "quay.io/biocontainers/multiqc:1.27--pyhdfd78af_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOTAVG:QIIME2_FEATURETABLE_GROUP",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_TRAIN",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:COMBINE_TABLE_DADA2",
+            "container": "quay.io/biocontainers/bioconductor-biostrings:2.58.0--r40h037d062_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_SEQFILTERTABLE",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:ROBJECT_WORKFLOW:PHYLOSEQ_INASV",
+            "container": "quay.io/nf-core/ubuntu:20.04"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:VSEARCH_CLUSTER",
+            "container": "quay.io/biocontainers/mulled-v2-53dae514294fca7b44842b784ed85a5303ac2d80:7b3365d778c690ca79bc85aaaeb86bb39a2dec69-0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:FILTER_SSU",
+            "container": "quay.io/biocontainers/bioconductor-biostrings:2.58.0--r40h037d062_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_FILTERLENASV",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_EXPORT:QIIME2_EXPORT_RELASV",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_BARPLOT",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_PREPTAX:QIIME2_EXTRACT",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.22.0--r41h399db7b_0"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_TAXONOMY:QIIME2_INSEQ",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_INASV",
+            "container": "quay.io/qiime2/amplicon:2024.10"
+        },
+        {
+            "name": "NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING",
+            "container": "quay.io/biocontainers/bioconductor-dada2:1.30.0--r43hf17093f_0"
+        }
+    ]
+}
