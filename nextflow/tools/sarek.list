@@ -1,0 +1,232 @@
+{
+    "processes": [
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_VARIANT_CALLING_GERMLINE_ALL:BAM_VARIANT_CALLING_SINGLE_STRELKA:STRELKA_SINGLE",
+            "container": "quay.io/biocontainers/strelka:2.9.10--h9ee0642_1"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:VCF_QC_BCFTOOLS_VCFTOOLS:VCFTOOLS_SUMMARY",
+            "container": "quay.io/biocontainers/vcftools:0.1.16--he513fc3_4"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:VCF_QC_BCFTOOLS_VCFTOOLS:VCFTOOLS_TSTV_QUAL",
+            "container": "quay.io/biocontainers/vcftools:0.1.16--he513fc3_4"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM",
+            "container": "quay.io/biocontainers/mulled-v2-e5d375990341c5aef3c9aff74f96f66f65375ef6:2d15960ccea84e249a150b7f5d4db3a42fc2d6c3-0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:BWAMEM2_INDEX",
+            "container": "quay.io/biocontainers/bwa-mem2:2.2.1--he513fc3_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_GATHERBQSRREPORTS",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:SAMTOOLS_STATS",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CRAM_TO_BAM",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:GATK4_CREATESEQUENCEDICTIONARY",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R1_FQ",
+            "container": "quay.io/biocontainers/spring:1.1.1--h4ac6f70_2"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:TABIX_PON",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM",
+            "container": "quay.io/biocontainers/ngscheckmate:1.0.1--py27pl5321r40hdfd78af_1"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:TABIX_GERMLINE_RESOURCE",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_FQ_PAIR",
+            "container": "quay.io/biocontainers/spring:1.1.1--h4ac6f70_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:VCF_QC_BCFTOOLS_VCFTOOLS:VCFTOOLS_TSTV_COUNT",
+            "container": "quay.io/biocontainers/vcftools:0.1.16--he513fc3_4"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:TABIX_DBSNP",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:INDEX_CRAM",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP",
+            "container": "quay.io/biocontainers/bcftools:1.20--h8b25389_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:MSISENSORPRO_SCAN",
+            "container": "quay.io/biocontainers/msisensor-pro:1.2.0--hfc31af2_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:TABIX_BCFTOOLS_ANNOTATIONS",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:SAMTOOLS_STATS",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_VARIANT_CALLING_SOMATIC_ALL:BAM_VARIANT_CALLING_SOMATIC_STRELKA:MERGE_STRELKA_SNVS",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:MULTIQC",
+            "container": "quay.io/biocontainers/multiqc:1.25.1--pyhdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_VARIANT_CALLING_SOMATIC_ALL:BAM_VARIANT_CALLING_SOMATIC_STRELKA:STRELKA_SOMATIC",
+            "container": "quay.io/biocontainers/strelka:2.9.10--h9ee0642_1"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_VARIANT_CALLING_GERMLINE_ALL:BAM_VARIANT_CALLING_SINGLE_STRELKA:MERGE_STRELKA_GENOME",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN",
+            "container": "quay.io/biocontainers/mulled-v2-580d344d9d4a496cd403932da8765f9e0187774d:df80ed8d23d0a2c43181a2b3dd1b39f2d00fab5c-0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:BWAMEM1_INDEX",
+            "container": "quay.io/biocontainers/bwa:0.7.18--he4a0461_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH",
+            "container": "quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:FASTQC",
+            "container": "quay.io/biocontainers/fastqc:0.12.1--hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_SNPS",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_INTERVALS:GATK4_INTERVALLISTTOBED",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:CAT_FASTQ",
+            "container": "community.wave.seqera.io/library/coreutils:9.5--ae99c88a9b28c264"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES",
+            "container": "quay.io/biocontainers/mulled-v2-d9e7bad0f7fbc8f4458d5c3ab7ffaaf0235b59fb:7cc3d06cbf42e28c5e2ebfc7c858654c7340a9d5-0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:VCF_QC_BCFTOOLS_VCFTOOLS:BCFTOOLS_STATS",
+            "container": "quay.io/biocontainers/bcftools:1.20--h8b25389_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED",
+            "container": "quay.io/biocontainers/gawk:5.1.0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_VARIANT_CALLING_SOMATIC_ALL:BAM_VARIANT_CALLING_SOMATIC_STRELKA:MERGE_STRELKA_INDELS",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:DRAGMAP_HASHTABLE",
+            "container": "quay.io/biocontainers/dragmap:1.2.1--h72d16da_1"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R2_FQ",
+            "container": "quay.io/biocontainers/spring:1.1.1--h4ac6f70_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM",
+            "container": "quay.io/biocontainers/mulled-v2-fe8faa35dbf6dc65a0f7f5d4ea12e31a79f73e40:1bd8542a8a0b42e0981337910954371d0230828e-0"
+        },
+        {
+            "name": "NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_INDELS",
+            "container": "quay.io/biocontainers/htslib:1.20--h5efdd21_2"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM",
+            "container": "community.wave.seqera.io/library/sentieon:202308.03--59589f002351c221"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM",
+            "container": "quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH",
+            "container": "quay.io/biocontainers/mosdepth:0.3.8--hd299d5a_0"
+        },
+        {
+            "name": "NFCORE_SAREK:SAREK:BAM_VARIANT_CALLING_GERMLINE_ALL:BAM_VARIANT_CALLING_SINGLE_STRELKA:MERGE_STRELKA",
+            "container": "quay.io/biocontainers/gatk4:4.5.0.0--py36hdfd78af_0"
+        }
+    ]
+}
