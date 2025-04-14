@@ -1,5 +1,7 @@
 # Design Specification: TRUST Tech Deliverable 4a. Enable user GitLab & Docker images
 
+![Synapxe Logo](Logo.png "Synapxe Logo")
+
 **Revision History**
 NA
 

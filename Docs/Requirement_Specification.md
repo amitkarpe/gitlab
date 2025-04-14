@@ -1,5 +1,7 @@
 # Requirement Specification: TRUST Tech Deliverable 4a. Enable user GitLab & Docker images
 
+![Synapxe Logo](Logo.png "Synapxe Logo")
+
 **Prepared By**
 
 | Name       | Project Role   | Signature | Date        |
