@@ -1,6 +1,9 @@
+<p align="right">
+  <img src="Logo.png" alt="Synapxe Logo" width="150"/>
+</p>
+
 # Requirement Specification: TRUST Tech Deliverable 4a. Enable user GitLab & Docker images
 
-![Synapxe Logo](Logo.png "Synapxe Logo")
 
 **Prepared By**
 

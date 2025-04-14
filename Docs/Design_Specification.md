@@ -1,6 +1,12 @@
-# Design Specification: TRUST Tech Deliverable 4a. Enable user GitLab & Docker images
+<p align="right">
+  <img src="Logo.png" alt="Synapxe Logo" width="150"/>
+</p>
 
-![Synapxe Logo](Logo.png "Synapxe Logo")
+# Design Specification: TRUST Tech Deliverable 4a. Enable user GitLab & Docker images
+# Document Title
+
+Your document content goes here...
+
 
 **Revision History**
 NA
