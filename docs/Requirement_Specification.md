@@ -4,12 +4,13 @@ subtitle: "Enable user GitLab & Docker images"
 title: "Requirement Specification: "
 author: "Amit Karpe, Lead Engineer"
 #date: "April 15, 2025" # Or use "today" for auto-date, or specific date like "2024-11-30"
+date: "30 Nov 2024" # Or use "today" for auto-date, or specific date like "2024-11-30"
 lang: en-SG # Language setting for localisation (if supported by LaTeX packages)
-abstract: |  # Optional: A short summary if needed
-  This document defines the requirement specifications for deploying code,
-  container repositories, and related cloud infrastructure in a non-internet
-  environment (Singapore GCC) for Lifebit CloudOS, focusing on enabling
-  private GitLab and AWS ECR usage.
+#abstract: |  # Optional: A short summary if needed
+#  This document defines the requirement specifications for deploying code,
+  # container repositories, and related cloud infrastructure in a non-internet
+  # environment (Singapore GCC) for Lifebit CloudOS, focusing on enabling
+  # private GitLab and AWS ECR usage.
 
 # === Table of Contents Settings ===
 toc: true                  # Generate Table of Contents

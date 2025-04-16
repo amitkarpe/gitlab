@@ -71,19 +71,27 @@ $endif$
 
 % --- Document Metadata ---
 $if(title)$
-  \begin{center} % Center the metadata
-    \title{$title$$if(subtitle)$\\[1ex]\large $subtitle$$endif$}
-    \author{$author$}
-    $if(date)$
-      \date{$date$}
-    $endif$
-  \end{center}
+  \title{\fontsize{20}{24}\selectfont $title$$if(subtitle)$\\[1ex]\large \fontsize{12}{14}\selectfont $subtitle$$endif$}
+$endif$
+$if(author)$
+  \author{$author$}
+$endif$
+$if(date)$
+  \date{$date$}
+$endif$
+
+% --- Document Start ---
+\begin{document}
+
+$if(title)$
   \maketitle
-  \newpage % Add a page break after the title page
+  \newpage
   $if(toc)$ % Check if TOC is requested *before* inserting the page break
   \newpage   % <<< Add this line to force a new page AFTER the title page
   $endif$
 $endif$
+
+\newpage
 
 $if(toc)$
   {
@@ -93,6 +101,8 @@ $if(toc)$
   \newpage
   }
 $endif$
+
+\newpage
 
 $if(number-sections)$
   \setcounter{secnumdepth}{$if(toc-depth)$$toc-depth$$else$3$endif$}
