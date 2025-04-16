@@ -34,6 +34,7 @@ footer-text: |
 logo-path: "synapxelogo.png" # Path to your logo file (relative or absolute)
 
 # === Other Pandoc Options ===
+number-sections: false # Automatically number section headings (##, ###, etc.)
 #number-sections: true      # Automatically number section headings (##, ###, etc.)
 # fig-caption: true        # Enable figure captions
 # tbl-caption: true        # Enable table captions
@@ -61,7 +62,6 @@ logo-path: "synapxelogo.png" # Path to your logo file (relative or absolute)
 | Name       | Project Role   | Signature | Date        |
 | :--------- | :------------- | :-------- | :---------- |
 | Amit Karpe | Lead Engineer  |           | 31 Jan 2025 |
-| NA         | NA             | NA        | NA         |
 
 
 
@@ -72,7 +72,6 @@ logo-path: "synapxelogo.png" # Path to your logo file (relative or absolute)
 | Name       | Project Role   | Signature | Date        |
 | :--------- | :------------- | :-------- | :---------- |
 | Yeo Zhen Xuan | Tech Lead   |           | 31 Jan 2025 |
-| NA         | NA             | NA        | NA         |
 
 
 
